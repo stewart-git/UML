@@ -1,7 +1,0 @@
-C:\Users\smg\Desktop\HexEditors\at1_q1\bin\Debug\at1_q1.exe.config
-C:\Users\smg\Desktop\HexEditors\at1_q1\bin\Debug\at1_q1.exe
-C:\Users\smg\Desktop\HexEditors\at1_q1\bin\Debug\at1_q1.pdb
-C:\Users\smg\Desktop\HexEditors\at1_q1\obj\Debug\at1_q1.csproj.SuggestedBindingRedirects.cache
-C:\Users\smg\Desktop\HexEditors\at1_q1\obj\Debug\at1_q1.csproj.CoreCompileInputs.cache
-C:\Users\smg\Desktop\HexEditors\at1_q1\obj\Debug\at1_q1.exe
-C:\Users\smg\Desktop\HexEditors\at1_q1\obj\Debug\at1_q1.pdb
