@@ -1,0 +1,19 @@
+.fieldtitle {
+	font-weight: bold;
+	color: #000000;
+}
+.IncrNo {
+	font-weight: bold;
+	color: #E4BE75;
+}
+.RTfilename{
+	font-weight: bold;
+	color: #000000;
+}
+.logtitle {
+	font-style: italic;
+	color: #000000;
+}
+.hl {
+	background-color: #FFFFB0;
+}

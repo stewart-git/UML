@@ -1,0 +1,264 @@
+/* 
+	** Case Report.txt
+	** User customizable CSS Style Sheet to be used by X-Ways 
+	** Forensics for case report purposes
+	
+	This style sheet defines format settings for the different
+	parts of the X-Ways Forensics Case Report. Entries in the
+	style sheet (each with an identifier in front, followed by
+	the actual formatting rules enclosed by {}) either refer to 
+	regular HTML-Tags if the identifier does not have a . in 
+	front of it (e.g. body for the <body> tag or h1 for <h1>), 
+	or they refer to a class which XWF uses to identify specific 
+	parts of the report, if there is a . in front of the 
+	identifier (e.g. .logo for class="logo" or .fieldtitle for 
+	class="fieldtitle").
+	
+	Combinations of tag and class (e.g. h2.evidence) are possible.
+	
+	As this is regular CSS used in conjunction with ordinary HTML
+	the entire arsenal of CSS formatting options are, of course,
+	permitted and available.
+
+	Any missing HTML tags, if the XWF report actually uses them
+	for anything, could be added manually, of course, though all
+	the classes used should already be listed in here. Each 
+	existing entry has a short comment in front of it, explaining
+	the use of the tag or class within the XWF case report.
+*/
+
+
+/* 
+	Basic settings for the entire case - to be used unless
+	explicitly overruled by more specific formatting for 
+	specific tags; affects e.g. the values output for the
+	details in the main report and report tables:
+*/
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+	line-height: 18px;
+	color: #333333;
+	font-weight: lighter;
+}
+
+
+/* 
+	This used to be the option "max. cell width" within the report options.
+
+	This allows defining the width at which text output within
+	report table cells is wrapped forcibly, to prevent individual
+	very long entries to cause the overall table width to go too
+	wide. Adjust the max-width value for wider or narrower table
+	cells, as required.
+*/
+.wrap {
+	word-wrap:break-word;
+	max-width:250px
+}
+
+
+/* 	h1 effectively only used for the optional report header: */
+h1 {
+	font-size: x-large;
+	font-weight: bold;
+	color: #000000;
+	line-height: 28px;
+}
+
+/* 	h2 used for case name and "Log" title (and the below): */
+h2 {
+	font-size: x-large;
+	font-weight: bold;
+	color: #666666;
+	line-height: 24px;
+}
+
+/* 	Exception to the above - the h2 tag used with class="evidence" for Evidence Object entries: */
+h2.evidence {
+	font-size: large;
+}
+
+/*	Used for report table names: */
+h3 {
+	font-size: large;
+	font-weight: bold;
+	color: #666666;
+	line-height: 20px;
+}
+
+/*	Defines Link formatting: */
+a {
+	text-decoration: none;
+	color: #0000D0;
+	background-color: #FFFFFF;
+}
+
+/*	Change in background-color for a link while the mouse hovers over it causes "interactive" effect: */
+a:hover {
+	text-decoration: none;
+	background-color: #E0E0E0;
+}
+
+/*	The outer table (used for report tables): */
+table {
+	color: #333333;
+	text-align: justify;
+	font-weight: lighter;
+	border: none;
+}
+
+/*
+	The table cells within (currently framed on
+	bottom and right only, no top and left borders
+	for individual cells):
+*/
+td {
+	border-width: 0px 1px 1px 0px;
+	font-size: 11px;
+}
+
+/*
+	Generic settings for embedded pictures, though several
+	sub-classes (.logo, .RTpicthumb, .RTdocthumb) exist below
+	for overriding settings.
+*/
+img {
+	max-width: 100%;	
+}
+
+/*
+	Used to format optional logo (current settings adjust
+	picture to max 300px width or height while retaining
+	original aspect ratio, irrespective whether picture
+	portrait, landscape or actually square):
+*/
+.logo {
+	border-style:none
+    height: auto; 
+    width: auto; 
+    max-width: 300px; 
+    max-height: 300px;	
+}
+
+/*	Optional preface text formatting: */
+.preface {
+	color: #333333;
+	text-align: justify;
+	font-weight: lighter;
+	font-size: 13px;
+}
+
+/*	Used for major headings within the main report: */
+.title {
+	font-weight: bold;
+	color: #000000;
+}
+
+/*	Used for minor headings within the main report: */
+.fieldtitle {
+	font-weight: bold;
+	color: #000000;
+}
+
+/*	Formats the optional incrementing numbers in report tables: */
+.IncrNo {
+	font-weight: bold;
+	color: #E4BE75;
+}
+
+/*
+	Formats the field names in report tables:
+*/
+.RTfield {
+	font-weight: normal;
+	color: #555555;
+}
+
+/*
+	File names are given their own formatting in report tables
+	to allow making them stand out somewhat from the remaining details:
+*/
+.RTfilename {
+	font-weight: bold;
+	color: #000000;
+}
+
+/*	Thumbnails of pictures in report tables formatted here (default: no border): */
+.RTpicthumb {
+	border-style:none;
+}
+
+/*
+	Thumbnails of non-pictures in report tables formatted here 
+	(default: 1px border to separate (mostly white) document
+	thumbnails from white page background):
+*/
+.RTdocthumb {
+	border-style: solid;
+	border-width: 1px;	
+	border-color: black;
+}
+
+/*	Formatting for "Time" and "Description" at very top of the activity log */
+.logtitle {
+	font-style: italic;
+	color: #000000;
+}
+
+/*	Formatting for timestamps in the activity log */
+.logtime {
+	font-style: normal;
+	color: #000000;
+	font-size: small;
+}
+
+/*	Formatting for entries in the activity log */
+.logentry {
+	font-style: normal;
+	color: #000000;
+	font-size: small;
+}
+
+/*	Formatting for text "screenshots" in the activity log */
+.logentrydetails {
+	font-style: normal;
+	color: #808080;
+	font-size: x-small;
+}
+
+/*	Defines color highlight for search hits in report: */
+.hl {
+ background-color: #FFFFB0;
+}
+
+@media print {
+	/*
+		In theory, within this @media print section, all of
+		the above tags and classes could be repeated, to give
+		them print-specific different/additional formatting.
+		
+		In actual fact, the default setup simply contains the
+		classes assigned to <div> tags surrounding the link
+		listings for evidence objects and report tables and 
+		the class given to the link to the next report page -
+		and makes them invisible for print purposes, as a link
+		serves no purpose on a printout.
+	*/
+
+	/*	Assigned to a <div> tag surrounding the list of evidence objects, linking to them: */
+	.evObjList {
+		display: none; 
+	}
+
+	/*	Assigned to a <div> tag surrounding the list of report tables, linking to them: */
+	.RTlist {
+		display: none;
+	}
+
+	/*	Assigned to the link at the bottom of one report page, linking to the next one: */
+	.nextLink {
+		display: none;
+	}
+}  /* end of @media print section */
