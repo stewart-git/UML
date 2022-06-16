@@ -1,2 +1,2 @@
 # UML
-A series of UML documents to help with your programming
+A collection of UML documents to help with your programming documentation
